@@ -17,9 +17,29 @@ Thiet ke ham hospitalFree
 
 
 float hospitalFree(int day, int thuoc, int pt, int tbh){
-  if(tbh=1) return G*(day*150000+thuoc+pt);
-  else if(tbh=2) return S*(day*150000+thuoc+pt);
-  else if(tbh=3) return C*(day*150000+thuoc+pt);
+  float ck, total;
+  if(tbh=1){
+    ck=G;
+    total=G*(day*150000+thuoc+pt);
+  }
+  else if(tbh=2){
+    ck=S;
+    total=S*(day*150000+thuoc+pt);
+  }
+  else if(tbh=3){
+    ck=C;
+    C*(day*150000+thuoc+pt);
+  }
+  
+  printf(" ===========HOA___DON=============\n");
+  printf("|Phi noi tru: %20d|\n", day*150000);
+  printf("|Tien thuoc: %21d|\n", thuoc);
+  printf("|Tien phau thuat: %16d|\n", pt);
+  printf("|Ban chi can thanh toan %0.0f%schi phi|\n", ck*100, "%");
+  printf("|---------------------------------|\n");
+  printf("|Tong cong: %22.2lf|\n", total);
+  printf("|_________________________________|\n");
+  
 }
 
 int main(){
@@ -45,7 +65,8 @@ int main(){
     scanf("%d", &tbh);
   }while(tbh!=1 && tbh!=2 && tbh!=3);
   
-  printf("Tong chi phi ma benh nhan phai tra cho benh vien la: %0.2lfVND\n",hospitalFree(day, thuoc, pt, tbh));
+  hospitalFree(day, thuoc, pt, tbh);
+  
   return 0;
 }
 
