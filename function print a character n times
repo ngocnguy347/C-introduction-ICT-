@@ -55,8 +55,6 @@ int main()
    printf("\n");
    }
 
-
-
    printf("\nPrint square 9x9:\n");
    print_square(ch, 9);
 
@@ -65,16 +63,19 @@ int main()
    printf("\n\n");
     int count=0;
     char c;
+    
   do{
-    count++;
+    
     printf("Input character: ");
     while(getchar() != '\n');
     c=getchar();
+    
     if(count>3) return printf("#\n");
-    if(c<='A' || c>='Z' || c<='a' || c>='z' || c<='0' || c>='9'){
+    if((c<='A' || c>='Z') && (c<='a' || c>='z') && (c<='0' || c>='9')){
+      count++;
       printf("Error!!! Input again!!!\n");
     }
-  }while(c<='A' || c>='Z' || c<='a' || c>='z' || c<='0' || c>='9');
+  }while(c<='A' || c>='Z' && c<='a' || c>='z' && c<='0' || c>='9');
   putchar(c);
   printf("\n");
 }
