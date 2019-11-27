@@ -120,10 +120,8 @@ void chonroimay()
                     else {
                         do {
                             printf ("May nay khong co nguoi dung\n");
-                            printf ("So may ban muon roi : "); fflush(stdin); scanf ("%d", &a);
-                        } while ( s[a-1] != 1);
-                        s[a-1] = 0;
-                        printf("HEN GAP LAI\n");
+                            printf ("Vui long chon may khac! \n");
+                        } while (0);
                     }
                 }
                 break;
